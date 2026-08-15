@@ -175,7 +175,7 @@ func globToRegex(glob string) string {
 			case i == 0 && i == last:
 				b.WriteString(".*")
 			case i == 0:
-				b.WriteString("(?:[^/]*/)?") // **/foo
+				b.WriteString("(?:.*/)?") // **/foo
 			case i == last:
 				b.WriteString(".*") // foo/**（前导 / 已由 gap 插入）
 			default:
